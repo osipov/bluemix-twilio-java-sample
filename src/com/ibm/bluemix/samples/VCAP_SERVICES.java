@@ -82,7 +82,7 @@ public class VCAP_SERVICES {
 				return getValue(obj, copyOfRange(path, 1, path.length));
 			else
 				return obj.toString();
-		}
+		} else
 		if (val instanceof String) 
 			return (String)val;
 		else
