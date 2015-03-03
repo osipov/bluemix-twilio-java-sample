@@ -42,6 +42,14 @@ public class TextMessage {
 
 	@POST
 	public String onTextMessageRequest(@FormParam("to") String to, @FormParam("body") String body) throws TwilioRestException {
+	
+		sendTextMessage(FROM, to, body);
+
+		return "{\"success\":\"true\"}";
+
+	}
+
+	private static final void sendTextMessage(String from, String to, String body) throws TwilioRestException {
 	    // Create a rest client
 	    final TwilioRestClient client = new TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN);
 
@@ -54,8 +62,6 @@ public class TextMessage {
 		params.add(new BasicNameValuePair("To", to)); 
 		params.add(new BasicNameValuePair("From", FROM));
 		params.add(new BasicNameValuePair("Body", body));
-		Message sms = messageFactory.create(params);		
-
-		return "{\"success\":\"true\"}";
+		Message sms = messageFactory.create(params);			
 	}
 }
