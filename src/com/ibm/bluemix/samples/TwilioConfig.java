@@ -21,9 +21,9 @@ import org.apache.wink.json4j.JSONObject;
 public class TwilioConfig {
 
 	public static final String FROM = "";
-	public static final String ACCOUNT_SID = "";
+	public static final String ACCOUNT_SID = getAccountSid() == null ? "" : getAccountSid();
 	public static final String AUTH_TOKEN = getAuthToken() == null ? "" : getAuthToken(); 
-	public static final String APP_SID = getAccountSid() == null ? "" : getAccountSid();
+	public static final String APP_SID = "";
 
 	public static String getAccountSid() {
 		return VCAP_SERVICES.get("user-provided", "0", "credentials", "accountSID");
