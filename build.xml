@@ -11,7 +11,8 @@
     </condition>
 	<property name="warname" value= "webStarterApp.war"/>
     <path id="classpathDir">
-        <pathelement location="bin"/>
+        <pathelement location="bin"/>        
+        <pathelement location="dep-jar/wink-json4j-1.4.jar"/>
         <pathelement location="dep-jar/com.ibm.ws.javaee.jaxrs.1.1_1.0.1.jar"/>
         <pathelement location="dep-jar/twilio-java-sdk-3.7.1-jar-with-dependencies.jar"/>
     </path>
